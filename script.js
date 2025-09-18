@@ -2,24 +2,25 @@
 let button = document.querySelector("btn");
 let stopBtn = document.querySelector("stop");
 let sound = ["applause","boo","gasp","tada","victory","wrong"]
-button.forEach(btn =>{
-	btn.addEventListener("click",()=>{
-		stopSounds();
-		let sound =  btn.innerText;
-		let audio = newAudio(`sound/${sound}.mp3`)
-		audio.Play();
-		btn.currentAudio = audio;
-	})
-})
 
-stopBtn.addEventListener('click', stopSounds);
-
-// Stop all sounds function
-function stopSounds() {
-  buttons.forEach(btn => {
-    if (btn.currentAudio) {
-      btn.currentAudio.pause();
-      btn.currentAudio.currentTime = 0;
+let currentAudio = null;
+button.forEach(button =>{
+	button.addEventListener("click",()=>{
+		if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
     }
+    const soundName = button.innerText; // button text = file name
+    currentAudio = new Audio(`sounds/${soundName}.mp3`);
+    currentAudio.play();
   });
-}
+});
+
+// Stop button functionality
+stopBtn.addEventListener("click", () => {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    currentAudio = null;
+  }
+});
