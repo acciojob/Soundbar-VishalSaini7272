@@ -1,1 +1,28 @@
 /*  your css code here. If applicable */
+.container{
+	background-color:violet;
+	height:200px;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+#buttons{
+	display:flex;
+	flex-wrap:wrap;
+	gap : 20px;
+	
+}
+
+	
+
+	
+	
+
+
+.btn, .stop{
+	background-color: lightcoral;
+	color : white;
+	font-size:20px;	
+}
