@@ -1,17 +1,17 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada'];
 let currentAudio = null;
 
-// play selected sound
-document.querySelectorAll('.btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    stopSound(); // stop previous sound if playing
-    const sound = btn.textContent;
-    currentAudio = new Audio(`sounds/${sound}.mp3`);
+// play sound when btn clicked
+document.querySelectorAll('.btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    stopSound(); // stop previous if playing
+    const soundName = button.textContent.trim();
+    currentAudio = new Audio(`sounds/${soundName}.mp3`);
     currentAudio.play();
   });
 });
 
-// stop button
+// stop sound on stop button click
 document.querySelector('.stop').addEventListener('click', stopSound);
 
 function stopSound() {

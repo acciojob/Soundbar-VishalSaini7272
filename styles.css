@@ -3,12 +3,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f4f4f4;
+  background: #f7f7f7;
   font-family: Arial, sans-serif;
-}
-
-.container {
-  text-align: center;
 }
 
 #buttons {
@@ -21,10 +17,9 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
   background: #3498db;
   color: white;
-  font-size: 16px;
-  transition: 0.3s;
 }
 
 .btn:hover {
