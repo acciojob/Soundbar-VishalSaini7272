@@ -1,28 +1,40 @@
-/*  your css code here. If applicable */
-.container{
-	background-color:violet;
-	height:200px;
-	width:100%;
-	display:flex;
-	justify-content:center;
-	align-items:center;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
-#buttons{
-	display:flex;
-	flex-wrap:wrap;
-	gap : 20px;
-	
+.container {
+  text-align: center;
 }
 
-	
+#buttons {
+  display: flex;
+  gap: 10px;
+}
 
-	
-	
+.btn, .stop {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #3498db;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
 
+.btn:hover {
+  background: #2980b9;
+}
 
-.btn, .stop{
-	background-color: lightcoral;
-	color : white;
-	font-size:20px;	
+.stop {
+  background: #e74c3c;
+}
+
+.stop:hover {
+  background: #c0392b;
 }
