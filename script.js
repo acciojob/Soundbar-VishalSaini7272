@@ -1,7 +1,7 @@
 //your JS code here. If required.
 let button = document.querySelector("btn");
 let stopBtn = document.querySelector("stop");
-let sound = ["applause","boo","gasp","tada","victory","wrong"]
+// let sound = ["applause","boo","gasp","tada","victory","wrong"]
 
 let currentAudio = null;
 button.forEach(button =>{
