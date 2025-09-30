@@ -1,30 +1,28 @@
-// List of sounds (must match filenames in the "sounds" folder)
+// List of sounds (must match the filenames in "sounds" folder)
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
 
 const buttonsContainer = document.getElementById('buttons');
+let currentAudio = null;
 
-// Create a button for each sound
+// Create sound buttons
 sounds.forEach(sound => {
   const btn = document.createElement('button');
-  btn.classList.add('btn');
+  btn.className = 'btn';
   btn.innerText = sound;
 
   btn.addEventListener('click', () => {
-    stopSounds();
-    const audio = new Audio(`sounds/${sound}.mp3`);
-    audio.play();
-    currentAudio = audio;
+    stopSound();
+    currentAudio = new Audio(`sounds/${sound}.mp3`);
+    currentAudio.play();
   });
 
   buttonsContainer.appendChild(btn);
 });
 
-let currentAudio = null;
+// Stop button functionality
+document.querySelector('.stop').addEventListener('click', stopSound);
 
-// Stop button
-document.querySelector('.stop').addEventListener('click', stopSounds);
-
-function stopSounds() {
+function stopSound() {
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
