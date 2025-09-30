@@ -1,35 +1,40 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f7f7f7;
   font-family: Arial, sans-serif;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 #buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .btn, .stop {
-  padding: 10px 20px;
+  background: #ff9800;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 15px 25px;
   font-size: 16px;
-  background: #3498db;
-  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
 
-.btn:hover {
-  background: #2980b9;
+.btn:hover, .stop:hover {
+  background: #e68900;
 }
 
 .stop {
-  background: #e74c3c;
+  background: #f44336;
+  color: #fff;
 }
-
 .stop:hover {
-  background: #c0392b;
+  background: #d32f2f;
 }
